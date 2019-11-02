@@ -1,0 +1,18 @@
+#PBS -l nodes=1:ppn=8
+#PBS -l pmem=2g
+#PBS -l walltime=00:10:00
+#PBS -q coc-ice
+#PBS -j oe
+#PBS -o output
+#PBS -m abe
+#PBS -M a20154920@gmail.com
+
+cd /nv/coc-ice/wsong43/FinalProject/ece6122_final_project/ece6122_final_project/p3/build
+
+echo "Started on '/bin/hostname'"
+module load gcc/4.9.0
+module load cmake/3.9.1
+module load openmpi
+module load cuda/9.1
+
+mpirun -np 4 ./p3
